@@ -16,8 +16,8 @@ module.exports = function (controller) {
 			if (error) throw new Error(error);
 			else if (response.statusCode == 200) {
 				var info = JSON.parse(body);
-				var text = "> " + info.replique;
-				text += "\n\n" + info.film ;
+				var text = "> " + info[0].replique;
+				text += "\n\n" + info[0].film ;
 				bot.reply(message, text);
 			}
 		
