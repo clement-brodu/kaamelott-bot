@@ -143,3 +143,11 @@ bot.appendMention = function (message, command) {
 
 // [COMPAT] Adding this function to ease interoperability with the skills part of the Botkit samples project
 bot.enrichCommand = bot.appendMention;
+
+// Autoping for heroku
+var https = require("https");
+if (process.env.HEROKU_AUTOPING == "true"){
+	setInterval(function() {
+		https.get(public_url);
+	}, 1200000); // every 20 minutes (1200000)
+}
