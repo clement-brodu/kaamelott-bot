@@ -58,7 +58,7 @@ module.exports = function (controller, bot) {
             + '   "description" : "' + botcommons["description"] + '",\n'
             + '   "url"         : "' + botcommons["url"] + '",\n'
 			+ '   "owner"       : "' + botcommons["legal_owner"] + '",\n'
-			+ '   "version"      : "' + pjson.version + '"\n';
+			+ '   "version"      : "' + pjson.version + '"\n'
             + '}\n';
 		var text = "**Kaamebot** est un Bot pour Webex Teams.<br/>"
 			+ "Il s'agit d'une application Node.js se basant sur Botkit.<br/>"
