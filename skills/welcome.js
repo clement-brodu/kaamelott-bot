@@ -20,10 +20,10 @@ module.exports = function (controller) {
                 return;
             }
 
-            var help = "Si tu veux de l'aide, t'as qu'a demander : `help`";
+            var help = "Si tu veux de l'aide, t'as qu'à demander : `help`";
 
             if (rawMessage.roomType == "group") {
-                help = "Pour avoir de l'aide, il n'y a qu'a demander : " + bot.appendMention(rawMessage, "help");
+                help = "Pour avoir de l'aide, il n'y a qu'à demander : " + bot.appendMention(rawMessage, "help");
 			}
 			
 			help += "<br/>Mais cherchez pas à faire des phrases pourries... On en a gros, c'est tout !"

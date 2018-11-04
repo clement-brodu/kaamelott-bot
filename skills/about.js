@@ -51,7 +51,7 @@ module.exports = function (controller, bot) {
     // .botcommons skill
     //
     controller.hears([/^about$/, /^botcommons$/, /^\.commons$/, /^\.bot$/], 'direct_message,direct_mention', function (bot, message) {
-		var pjson = require('./package.json');
+		var pjson = require('./../package.json');
 
         // Return metadata
         var metadata = '{\n'
