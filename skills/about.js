@@ -60,10 +60,11 @@ module.exports = function (controller, bot) {
 			+ '   "owner"       : "' + botcommons["legal_owner"] + '",\n'
 			+ '   "version"      : "' + pjson.version + '"\n';
             + '}\n';
-		var text = "Kaamebot est un Bot pour Webex Teams.<br/>"
+		var text = "**Kaamebot** est un Bot pour Webex Teams.<br/>"
 			+ "Il s'agit d'une application Node.js se basant sur Botkit.<br/>"
-		    + "N'hésitez pas à contribuer au projet : [Kaamelott Bot](https://github.com/clement-brodu/kaamelott-bot) <br/>"
-			+ '```json\n' + metadata + '\n```';
+			+ "N'hésitez pas à contribuer au projet : [Kaamelott Bot](https://github.com/clement-brodu/kaamelott-bot)"
+			+ "\n\n"
+			+ "```json\n" + metadata + "\n```";
         bot.reply(message, text);
     });
 
