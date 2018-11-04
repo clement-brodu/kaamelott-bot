@@ -20,12 +20,13 @@ module.exports = function (controller) {
                 return;
             }
 
-            var help = "Pour en savoir plus à mon sujet, fais toi aider : `help`";
+            var help = "Si tu veux de l'aide, t'as qu'a demander : `help`";
 
             if (rawMessage.roomType == "group") {
-                help = "Attention, tu es dans un 'Groupe'. Je ne répond que si tu me mentionnes.<br/>";
-                help += "Pour en savoir plus à mon sujet, fais toi aider : " + bot.appendMention(rawMessage, "help");
-            }
+                help = "Pour avoir de l'aide, il n'y a qu'a demander : " + bot.appendMention(rawMessage, "help");
+			}
+			
+			help += "<br/>Mais cherchez pas à faire des phrases pourries... On en a gros, c'est tout !"
 
             bot.say({
                 text: `_${help}_`,

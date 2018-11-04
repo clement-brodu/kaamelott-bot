@@ -1,12 +1,13 @@
 {
-  "description": "Kaamebot",
+  "name": "kaamelott-bot",
+  "description": "Kaamebot - le bot qui te donne des répliques",
   "version": "0.1.0",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
   },
   "keywords": [
-    "testbot",
+    "kaamebot",
     "botkit",
     "brodu"
   ],
