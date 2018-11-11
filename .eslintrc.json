@@ -1,0 +1,15 @@
+{
+	"env": {
+        "node": true,
+		"commonjs": true
+	},
+	"parser": "babel-eslint",
+	"extends": ["eslint:recommended", "google"],
+	"rules": {
+		"no-console":0,
+		"max-len": ["error", { "code": 120 }],
+		"linebreak-style": ["error", "windows"],
+		"prefer-const": "off",
+		"quotes": ["error", "double"]
+    }
+}
