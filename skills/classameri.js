@@ -8,7 +8,7 @@ module.exports = function(controller) {
     let request = require("request");
 
     let options = {method: "GET",
-      url: "https://kaamebot.rockball.fr/api/classeamericaine",
+      url: "http://kaamebot.rockball.fr/api/classeamericaine",
     };
 
     request(options, function(error, response, body) {
