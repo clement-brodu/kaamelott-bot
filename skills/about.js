@@ -62,7 +62,10 @@ module.exports = function(controller, bot) {
             + "}\n";
         const text = "**Kaamebot** est un Bot pour Webex Teams.<br/>"
             + "Il s'agit d'une application Node.js se basant sur Botkit.<br/>"
-            + "N'hésitez pas à contribuer au projet : [Kaamelott Bot](https://github.com/clement-brodu/kaamelott-bot)"
+            + "N'hésitez pas à contribuer au projet : "
+            + "[Kaamelott Bot](https://github.com/clement-brodu/kaamelott-bot)\n"
+            + "Pour ajouter d'autres citations : "
+            + "[Kaamebot Customs APIs](https://github.com/Ballrock/kaamebot_customapis)\n"
             + "\n\n"
             + "```json\n" + metadata + "\n```";
         bot.reply(message, text);
