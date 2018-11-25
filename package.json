@@ -1,10 +1,12 @@
 {
   "name": "kaamelott-bot",
   "description": "Kaamebot - le bot qui te donne des répliques",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "bot.js",
   "scripts": {
-    "start": "node bot.js"
+	"start": "node bot.js",
+	"lint": ".\\node_modules\\.bin\\eslint --ext .js --ignore-path .gitignore .",
+  	"lintfix": ".\\node_modules\\.bin\\eslint --fix --ext .js --ignore-path .gitignore ."
   },
   "keywords": [
     "kaamebot",
@@ -27,7 +29,12 @@
     "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-google": "^0.11.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-loader": "^2.1.1",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-promise": "^4.0.1"
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-vue": "^4.7.1",
+    "prettier": "^1.15.2"
   }
 }

@@ -6,32 +6,34 @@ module.exports = function(controller, bot) {
   // OVERRIDE WITH YOUR BOT INFORMATION
   //
   const botcommons = {
-
     // Bot description
-    "description": "Kaamebot - le bot qui te donne des répliques",
+    description: "Kaamebot - le bot qui te donne des répliques",
 
     // Where to get more information about the bot
-    "url": "https://github.com/clement-brodu/kaamelott-bot",
+    url: "https://github.com/clement-brodu/kaamelott-bot",
 
     // Legal owner
-    "legal_owner": "Clément Brodu <https://github.com/clement-brodu>",
+    legal_owner: "Clément Brodu <https://github.com/clement-brodu>",
 
     // Contact name for support
-    "support_contact": "Clément BRODU <mailto:clement.brodu@gmail.com>",
+    support_contact: "Clément BRODU <mailto:clement.brodu@gmail.com>",
 
     // Messaging platform
     // [WORKAROUND] overriding Botkit's integrated support temporarly as 'ciscospark' is still returned
     // "platform": bot.type,
-    "platform": "webex",
+    platform: "webex",
 
     // the precise bot identity is loaded asynchronously, from a GET /people/me request
-    "identity": "unknown",
+    identity: "unknown",
 
     // Endpoint where to check the bot is alive
-    "healthcheck": "https://" + controller.config.public_address + process.env.HEALTHCHECK_ROUTE,
+    healthcheck:
+      "https://" +
+      controller.config.public_address +
+      process.env.HEALTHCHECK_ROUTE,
 
     // BotCommons specifications version (should be an href)
-    "botcommons": "draft",
+    botcommons: "draft"
   };
 
   //
@@ -39,7 +41,7 @@ module.exports = function(controller, bot) {
   //
   controller.webserver.get(process.env.BOTCOMMONS_ROUTE, function(req, res) {
     // As the identity is load asynchronously from the access token, we need to check until it's fetched
-    if ((botcommons.identity == "unknown") && (bot.botkit.identity)) {
+    if (botcommons.identity == "unknown" && bot.botkit.identity) {
       botcommons.identity = bot.botkit.identity.emails[0];
     }
     res.json(botcommons);
@@ -49,25 +51,40 @@ module.exports = function(controller, bot) {
   //
   // .botcommons skill
   //
-  controller.hears([/^about$/, /^botcommons$/, /^\.commons$/, /^\.bot$/],
-      "direct_message,direct_mention", function(bot, message) {
-        const pjson = require("./../package.json");
+  controller.hears(
+    [/^about$/, /^botcommons$/, /^\.commons$/, /^\.bot$/],
+    "direct_message,direct_mention",
+    function(bot, message) {
+      const pjson = require("./../package.json");
 
-        // Return metadata
-        const metadata = "{\n"
-            + "   \"description\" : \"" + botcommons["description"] + "\",\n"
-            + "   \"url\"         : \"" + botcommons["url"] + "\",\n"
-            + "   \"owner\"       : \"" + botcommons["legal_owner"] + "\",\n"
-            + "   \"version\"      : \"" + pjson.version + "\"\n"
-            + "}\n";
-        const text = "**Kaamebot** est un Bot pour Webex Teams.<br/>"
-            + "Il s'agit d'une application Node.js se basant sur Botkit.<br/>"
-            + "N'hésitez pas à contribuer au projet : "
-            + "[Kaamelott Bot](https://github.com/clement-brodu/kaamelott-bot)<br/>"
-            + "Pour ajouter d'autres citations : "
-            + "[Kaamebot Customs APIs](https://github.com/Ballrock/kaamebot_customapis)<br/>"
-            + "\n\n"
-            + "```json\n" + metadata + "\n```";
-        bot.reply(message, text);
-      });
+      // Return metadata
+      const metadata =
+        "{\n" +
+        '   "description" : "' +
+        botcommons["description"] +
+        '",\n' +
+        '   "url"         : "' +
+        botcommons["url"] +
+        '",\n' +
+        '   "owner"       : "' +
+        botcommons["legal_owner"] +
+        '",\n' +
+        '   "version"      : "' +
+        pjson.version +
+        '"\n' +
+        "}\n";
+      const text =
+        "**Kaamebot** est un Bot pour Webex Teams.<br/>" +
+        "Il s'agit d'une application Node.js se basant sur Botkit.<br/>" +
+        "N'hésitez pas à contribuer au projet : " +
+        "[Kaamelott Bot](https://github.com/clement-brodu/kaamelott-bot)<br/>" +
+        "Pour ajouter d'autres citations : " +
+        "[Kaamebot Customs APIs](https://github.com/Ballrock/kaamebot_customapis)<br/>" +
+        "\n\n" +
+        "```json\n" +
+        metadata +
+        "\n```";
+      bot.reply(message, text);
+    }
+  );
 };

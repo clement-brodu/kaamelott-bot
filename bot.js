@@ -10,15 +10,18 @@
 // Load environment variables from project .env file
 require("node-env-file")(__dirname + "/.env");
 
-
 // Fetch token from environement
 // [COMPAT] supports SPARK_TOKEN for backward compatibility
 const accessToken = process.env.ACCESS_TOKEN || process.env.SPARK_TOKEN;
 if (!accessToken) {
-  console.log("Could not start as this bot requires a Webex Teams API access token.");
+  console.log(
+    "Could not start as this bot requires a Webex Teams API access token."
+  );
   console.log("Please invoke with an ACCESS_TOKEN environment variable");
   console.log("Example:");
-  console.log("> ACCESS_TOKEN=XXXXXXXXXXXX PUBLIC_URL=YYYYYYYYYYYYY node bot.js");
+  console.log(
+    "> ACCESS_TOKEN=XXXXXXXXXXXX PUBLIC_URL=YYYYYYYYYYYYY node bot.js"
+  );
   process.exit(1);
 }
 
@@ -38,12 +41,15 @@ if (!publicUrl) {
 }
 if (!publicUrl) {
   console.log("Could not start as this bot must expose a public endpoint.");
-  console.log("Please add env variable PUBLIC_URL on the command line or to the .env file");
+  console.log(
+    "Please add env variable PUBLIC_URL on the command line or to the .env file"
+  );
   console.log("Example: ");
-  console.log("> ACCESS_TOKEN=XXXXXXXXXXXX PUBLIC_URL=YYYYYYYYYYYYY node bot.js");
+  console.log(
+    "> ACCESS_TOKEN=XXXXXXXXXXXX PUBLIC_URL=YYYYYYYYYYYYY node bot.js"
+  );
   process.exit(1);
 }
-
 
 //
 // Create bot
@@ -59,12 +65,10 @@ const controller = Botkit.sparkbot({
   // this is a RECOMMENDED security setting that
   // checks if incoming payloads originate from Webex
   secret: process.env.SECRET,
-  webhook_name: process.env.WEBHOOK_NAME || ("built with BotKit (" + env + ")"),
+  webhook_name: process.env.WEBHOOK_NAME || "built with BotKit (" + env + ")"
 });
 
-const bot = controller.spawn({
-});
-
+const bot = controller.spawn({});
 
 //
 // Launch bot
@@ -78,11 +82,11 @@ controller.setupWebserver(port, function(err, webserver) {
 
   // installing Healthcheck
   const healthcheck = {
-    "up_since": new Date(Date.now()).toGMTString(),
-    "hostname": require("os").hostname() + ":" + port,
-    "version": "v" + require("./package.json").version,
-    "bot": "unknown", // loaded asynchronously
-    "botkit": "v" + bot.botkit.version(),
+    up_since: new Date(Date.now()).toGMTString(),
+    hostname: require("os").hostname() + ":" + port,
+    version: "v" + require("./package.json").version,
+    bot: "unknown", // loaded asynchronously
+    botkit: "v" + bot.botkit.version()
   };
   webserver.get(process.env.HEALTHCHECK_ROUTE, function(req, res) {
     // As the identity is load asynchronously from the
@@ -101,25 +105,25 @@ controller.setupWebserver(port, function(err, webserver) {
   console.log("healthcheck available at: " + process.env.HEALTHCHECK_ROUTE);
 });
 
-
 //
 // Load skills
 //
 
 const normalizedPath = require("path").join(__dirname, "skills");
-require("fs").readdirSync(normalizedPath).forEach(function(file) {
-  try {
-    require("./skills/" + file)(controller, bot);
-    console.log("loaded skill: " + file);
-  } catch (err) {
-    if (err.code == "MODULE_NOT_FOUND") {
-      if (file != "utils") {
-        console.log("could not load skill: " + file);
+require("fs")
+  .readdirSync(normalizedPath)
+  .forEach(function(file) {
+    try {
+      require("./skills/" + file)(controller, bot);
+      console.log("loaded skill: " + file);
+    } catch (err) {
+      if (err.code == "MODULE_NOT_FOUND") {
+        if (file != "utils") {
+          console.log("could not load skill: " + file);
+        }
       }
     }
-  }
-});
-
+  });
 
 //
 // Webex Teams Utilities
@@ -131,13 +135,13 @@ bot.appendMention = function(message, command) {
 
   // if the message is a raw message
   // (from a post message callback such as bot.say())
-  if (message.roomType && (message.roomType == "group")) {
+  if (message.roomType && message.roomType == "group") {
     botName = bot.botkit.identity.displayName;
     return "`@" + botName + " " + command + "`";
   }
 
   // if the message is a Botkit message
-  if (message.raw_message && (message.raw_message.data.roomType == "group")) {
+  if (message.raw_message && message.raw_message.data.roomType == "group") {
     botName = bot.botkit.identity.displayName;
     return "`@" + botName + " " + command + "`";
   }

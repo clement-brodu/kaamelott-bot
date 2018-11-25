@@ -2,7 +2,10 @@
 // Command: help
 //
 module.exports = function(controller) {
-  controller.hears([/^help$/], "direct_message,direct_mention", function(bot, message) {
+  controller.hears([/^help$/], "direct_message,direct_mention", function(
+    bot,
+    message
+  ) {
     let text = "L'important c'est les valeurs :";
     text += "\n- " + bot.appendMention(message, "kaa");
     text += ": Retourne une citation de kaamelott en aléatoire";
@@ -14,7 +17,8 @@ module.exports = function(controller) {
     text += ": Retourne une citation de La Classe américaine en aléatoire";
     text += "\n\nVous vous prenez pour un enseignant ?";
     text += "\n- " + bot.appendMention(message, "about");
-    text += ": Est-ce qu'on peut s'en servir pour donner de l'élan à un pigeon ?";
+    text +=
+      ": Est-ce qu'on peut s'en servir pour donner de l'élan à un pigeon ?";
     bot.reply(message, text);
   });
 };
