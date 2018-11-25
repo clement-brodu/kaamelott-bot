@@ -1,16 +1,15 @@
 # Kaamebot - The Webex Kaamelott Bot
 This project is a fork of https://github.com/CiscoDevNet/botkit-template.
 
-This awesome bot allow you to get quotes from **Kaamelott** and **OSS 117**.
+This awesome bot allow you to get quotes from : 
+* **Kaamelott** : https://kaamelott.chaudie.re/
+* **OSS 117** : https://github.com/bbastou/OSS117
 
-# Botkit Template for Webex Teams
+Thanks to Ballrock for his Custom API (https://github.com/Ballrock/kaamebot_customapis) and for providing the following quotes :
+* **DevQuote**
+* **La Classe americaine**
 
-This template regroups a set of best practices to bootstrap a Botkit project for Webex Teams.
-
-**Take a look at the [redis](https://github.com/CiscoDevNet/botkit-template/tree/redis) and [pluggable architecture](https://github.com/CiscoDevNet/botkit-template/tree/plugin) branches for more advanced templates**
-
-**Check [Howdy's Botkit StarterKit](https://github.com/howdyai/botkit-starter-ciscospark) if you're planning to use [Botkit Studio](https://studio.botkit.ai/app)**
-
+# Botkit for Webex Teams
 
 ## Features
 
