@@ -18,12 +18,13 @@ module.exports = function(controller) {
         if (error) throw new Error(error);
         else if (response.statusCode == 200) {
           let info = JSON.parse(body);
+          let perso;
+          if (info.citation.infos.personnage)
+            perso = "**" + info.citation.infos.personnage + "** - ";
           let text = "> " + info.citation.citation;
           text +=
-            "\n\n**" +
-            info.citation.infos.personnage +
-            "**" +
-            " - " +
+            "\n\n" +
+            perso +
             info.citation.infos.episode +
             " - " +
             info.citation.infos.saison;
