@@ -4,7 +4,7 @@
 
 module.exports = function(controller) {
   controller.hears(
-    [/^classameri$/, /^cla$/],
+    [/^[Cc]lassameri$/, /^[Cc]la$/],
     "direct_message,direct_mention",
     function(bot, message) {
       let request = require("request");

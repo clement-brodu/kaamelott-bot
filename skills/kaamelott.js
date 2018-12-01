@@ -4,7 +4,7 @@
 
 module.exports = function(controller) {
   controller.hears(
-    [/^kaamelott$/, /^kaa$/],
+    [/^kaamelott$/, /^[Kk]aa$/],
     "direct_message,direct_mention",
     function(bot, message) {
       let request = require("request");

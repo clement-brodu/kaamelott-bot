@@ -52,7 +52,7 @@ module.exports = function(controller, bot) {
   // .botcommons skill
   //
   controller.hears(
-    [/^about$/, /^botcommons$/, /^\.commons$/, /^\.bot$/],
+    [/^[Aa]bout$/, /^botcommons$/, /^\.commons$/, /^\.bot$/],
     "direct_message,direct_mention",
     function(bot, message) {
       const pjson = require("./../package.json");

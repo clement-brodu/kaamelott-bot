@@ -2,7 +2,7 @@
 // Command: help
 //
 module.exports = function(controller) {
-  controller.hears([/^help$/], "direct_message,direct_mention", function(
+  controller.hears([/^[Hh]elp$/], "direct_message,direct_mention", function(
     bot,
     message
   ) {
