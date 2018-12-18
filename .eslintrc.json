@@ -7,13 +7,16 @@
   "extends": ["eslint:recommended", "google", "plugin:prettier/recommended"],
   "rules": {
     "no-console": 0,
-    "max-len": ["error", { "code": 120 }],
+	"max-len": ["error", { "code": 120 }],
+	"linebreak-style": 0,
 	"prefer-const": "off",
-    "prettier/prettier": [
+	"prettier/prettier": [
       "error",
       {
+		"endOfLine": "crlf",
         "doubleQuote": true,
-        "tabWidth": 2
+		"tabWidth": 2
+		
       }
     ]
   }
