@@ -58,10 +58,10 @@ if (!publicUrl) {
 const Botkit = require("botkit");
 
 const env = process.env.NODE_ENV || "development";
-const controller = Botkit.sparkbot({
+const controller = Botkit.webexbot({
   log: true,
   public_address: publicUrl,
-  ciscospark_access_token: accessToken,
+  access_token: accessToken,
   // this is a RECOMMENDED security setting that
   // checks if incoming payloads originate from Webex
   secret: process.env.SECRET,
