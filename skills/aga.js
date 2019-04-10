@@ -11,7 +11,7 @@ module.exports = function(controller) {
 
       let options = {
         method: "GET",
-        url: "http://kaamebot.rockball.fr/api/haddock"
+        url: "http://kaamebot.rockball.fr/api/aga"
       };
 
       request(options, function(error, response, body) {
