@@ -9,6 +9,9 @@ Thanks to Ballrock for his Custom API (https://github.com/Ballrock/kaamebot_cust
 * **DevQuote**
 * **La Classe americaine**
 
+# CI 
+Kaamebot use codeship for CI.
+
 # Botkit for Webex Teams
 
 ## Features
