@@ -10,7 +10,12 @@ Thanks to Ballrock for his Custom API (https://github.com/Ballrock/kaamebot_cust
 * **La Classe americaine**
 
 # CI 
-Kaamebot use codeship for CI.
+Kaamebot use Heroku for CI & Host.
+
+# TODO 
+- codeship for CI.
+- test deploy & Host on Google App Engine. 
+- deploy & Host on AWS. 
 
 # Botkit for Webex Teams
 
