@@ -11,7 +11,7 @@ module.exports = function(controller) {
 
       let options = {
         method: "GET",
-        url: "http://kaamebot.rockball.fr/api/classeamericaine"
+        url: "https://kaamebot-customapis.herokuapp.com//api/classeamericaine"
       };
 
       request(options, function(error, response, body) {
