@@ -18,7 +18,7 @@ module.exports = function(controller) {
         if (error) throw new Error(error);
         else if (response.statusCode == 200) {
           let info = JSON.parse(body);
-          let text = "> " + info.quote;
+          let text = ">>>\n" + info.quote + "\n>>>";
           text += "\n\n" + info.author ;
           bot.reply(message, text);
         }
