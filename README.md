@@ -10,6 +10,7 @@ Thanks to Ballrock for his Custom API (https://github.com/Ballrock/kaamebot_cust
 
 Other quotes are provided by my fork : https://github.com/clement-brodu/kaamebot_customapis
 * **OSS 117**
+* **Les Visiteurs**
 
 # CI 
 Kaamebot use Heroku for CI & Host.
