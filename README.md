@@ -3,11 +3,13 @@ This project is a fork of https://github.com/CiscoDevNet/botkit-template.
 
 This awesome bot allow you to get quotes from : 
 * **Kaamelott** : https://kaamelott.chaudie.re/
-* **OSS 117** : https://github.com/bbastou/OSS117
 
 Thanks to Ballrock for his Custom API (https://github.com/Ballrock/kaamebot_customapis) and for providing the following quotes :
 * **DevQuote**
 * **La Classe americaine**
+
+Other quotes are provided by my fork : https://github.com/clement-brodu/kaamebot_customapis
+* **OSS 117**
 
 # CI 
 Kaamebot use Heroku for CI & Host.

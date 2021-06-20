@@ -79,7 +79,7 @@ module.exports = function(controller, bot) {
         "N'hésitez pas à contribuer au projet : " +
         "[Kaamelott Bot](https://github.com/clement-brodu/kaamelott-bot)<br/>" +
         "Pour ajouter d'autres citations : " +
-        "[Kaamebot Customs APIs](https://github.com/Ballrock/kaamebot_customapis)<br/>" +
+        "[Kaamebot Customs APIs](https://github.com/clement-brodu/kaamebot_customapis)<br/>" +
         "\n\n" +
         "```json\n" +
         metadata +

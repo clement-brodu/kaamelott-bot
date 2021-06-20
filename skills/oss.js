@@ -4,22 +4,22 @@
 
 module.exports = function(controller) {
   controller.hears(
-    [/^oss117$/, /^[Oo]ss$/],
+    [/^[Oo]ss117$/, /^[Oo]ss$/],
     "direct_message,direct_mention",
     function(bot, message) {
       let request = require("request");
 
       let options = {
         method: "GET",
-        url: "http://www.oss-117.fr/api/v1/replique/random/"
+        url: "https://kaamebot-customapis.herokuapp.com//api/oss"
       };
 
       request(options, function(error, response, body) {
         if (error) throw new Error(error);
         else if (response.statusCode == 200) {
           let info = JSON.parse(body);
-          let text = "> " + info[0].replique;
-          text += "\n\n" + info[0].film;
+          let text = "> " + info.quote;
+          text += "\n\n" + info.author ;
           bot.reply(message, text);
         }
       });
