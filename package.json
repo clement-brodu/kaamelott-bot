@@ -18,7 +18,7 @@
   "dependencies": {
     "botkit": "0.7.0",
     "node-env-file": "0.1.8",
-    "npm": "^6.4.1"
+    "npm": "^9.1.2"
   },
   "repository": {
     "type": "git",
